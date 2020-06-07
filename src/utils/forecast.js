@@ -15,10 +15,11 @@ const forecast = (lat, long, callback) => {
       console.log("Unable to fetch data for mentioned coordinates", undefined);
     } else {
       //const body = body;
-      
+      const today = Object.keys(body.forecast)[0];
+
       callback(
         undefined,
-        `${body.current.weather_descriptions[0]} and feels like ${body.current.feelslike}`
+        `${body.current.weather_descriptions[0]} and feels like ${body.current.feelslike}F with a High of ${body.forecast[today].maxtemp}F and Low of ${body.forecast[today].mintemp}F`
       );
     }
   });
