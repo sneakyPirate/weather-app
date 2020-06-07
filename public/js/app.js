@@ -2,7 +2,7 @@
 const url = "http://localhost:3000/weather?address=";
 
 // fetch(url + "Boston").then((response) => {
-fetch("/" + "Boston").then((response) => {
+fetch("/weather?address=" + "Boston").then((response) => {
   response
     .json()
     .then((data) => {
@@ -32,7 +32,7 @@ weatherForm.addEventListener("submit", (e) => {
   messageOne.textContent = "Loading...";
 
   // fetch(url + location).then((response) => {
-  fetch("/" + location).then((response) => {
+  fetch("/weather?address=" + location).then((response) => {
     response
       .json()
       .then((data) => {
